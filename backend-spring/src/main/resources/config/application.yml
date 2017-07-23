@@ -6,6 +6,8 @@
 spring:
     application:
         name: tasker
+    profiles:
+            active: #spring.profiles.active#
     jackson:
         serialization.write_dates_as_timestamps: false
     jpa:
@@ -31,3 +33,7 @@ server:
 # ===================================================================
 
 application:
+    async:
+        core-pool-size: 2
+        max-pool-size: 50
+        queue-capacity: 10000
