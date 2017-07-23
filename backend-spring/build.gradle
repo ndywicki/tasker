@@ -1,0 +1,100 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+        maven { url "http://repo.spring.io/plugins-release" }
+        maven { url "http://repo.spring.io/milestone" }
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${spring_boot_version}"
+        classpath "org.springframework.build.gradle:propdeps-plugin:0.0.7"
+        classpath "io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE"
+    }
+}
+
+apply plugin: 'java'
+sourceCompatibility=1.8
+targetCompatibility=1.8
+apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
+apply plugin: 'propdeps'
+apply plugin: 'io.spring.dependency-management'
+defaultTasks 'bootRun'
+
+bootRepackage {
+    mainClass = 'io.github.ndywicki.TaskerApp'
+}
+
+war {
+
+}
+
+springBoot {
+    mainClass = 'io.github.ndywicki.TaskerApp'
+    executable = true
+    buildInfo()
+}
+
+test {
+    include '**/*UnitTest*'
+    include '**/*IntTest*'
+    reports.html.enabled = false
+}
+
+task testReport(type: TestReport) {
+    destinationDir = file("$buildDir/reports/tests")
+    reportOn test
+}
+
+apply from: 'gradle/profile_dev.gradle'
+
+group = 'io.github.ndywicki'
+version = '0.0.1-SNAPSHOT'
+
+description = 'Tasker Spring backend'
+
+configurations {
+    providedRuntime
+    compile.exclude module: "spring-boot-starter-tomcat"
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+    maven { url 'http://repo.spring.io/milestone' }
+    maven { url 'http://repo.spring.io/snapshot' }
+    maven { url 'https://repository.jboss.org/nexus/content/repositories/releases' }
+    maven { url 'https://oss.sonatype.org/content/repositories/releases' }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven { url 'http://repo.maven.apache.org/maven2' }
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile ("org.springframework.boot:spring-boot-starter-web") {
+        exclude module: 'spring-boot-starter-tomcat'
+    }
+    compile "org.springframework.boot:spring-boot-starter-undertow"
+	runtime('com.h2database:h2')
+	runtime('mysql:mysql-connector-java')
+	compileOnly('org.projectlombok:lombok')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+clean {
+    delete "target"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.0'
+}
+
+task stage(dependsOn: 'bootRepackage') {
+}
