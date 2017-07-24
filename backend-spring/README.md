@@ -34,3 +34,6 @@ Get Oauth 2.0 token for admin user
 
     curl "http://localhost:8080/oauth/token" -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" --data "username=admin&password=admin&grant_type=password&scope=read%20write&client_secret=tasker-secret-token&client_id=taskerapp"
 
+Get current user account info
+
+	curl -X GET --header "Accept: application/json" --header "Authorization: Bearer [ACESS_TOKEN]" "http://localhost:8080/api/account"
