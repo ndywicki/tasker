@@ -44,4 +44,8 @@ export class NavbarComponent {
         this.isNavbarCollapsed = !this.isNavbarCollapsed;
     }
 
+    getUserFirstname() {
+        return this.isAuthenticated() ? this.principal.getUserFirstname() : null;
+    }
+
 }

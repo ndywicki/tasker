@@ -4,9 +4,11 @@ import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class AccountService  {
+    private apiBaseUrl = 'http://localhost:8080/';
+
     constructor(private http: Http) { }
 
     get(): Observable<any> {
-        return this.http.get('api/account').map((res: Response) => res.json());
+        return this.http.get(this.apiBaseUrl + 'api/account').map((res: Response) => res.json());
     }
 }

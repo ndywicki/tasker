@@ -46,4 +46,12 @@ export class Principal {
     isAuthenticated(): boolean {
         return this.authenticated;
     }
+
+    isIdentityResolved(): boolean {
+        return this.userIdentity !== undefined;
+    }
+
+    getUserFirstName(): String {
+        return this.isIdentityResolved() ? this.userIdentity.firstName : null;
+    }
 }

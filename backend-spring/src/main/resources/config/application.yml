@@ -37,3 +37,10 @@ application:
         core-pool-size: 2
         max-pool-size: 50
         queue-capacity: 10000
+    cors:
+        allowed-origins: "*"
+        allowed-methods: GET, PUT, POST, DELETE, OPTIONS
+        allowed-headers: "*"
+        exposed-headers:
+        allow-credentials: true
+        max-age: 1800
