@@ -35,4 +35,4 @@ Each backend expose a REST API for authentification and task operations.
 
 ## Issues
 
-- [ ] CORS issue between front and back (http port) 
+- [x] CORS issue between front and back (http port) 

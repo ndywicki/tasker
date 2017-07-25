@@ -79,7 +79,6 @@ public class AccountResourceIntTest {
         user.setFirstName("nicolas");
         user.setLastName("dywicki");
         user.setEmail("nicolas.dywicki@mail.com");
-        user.setImageUrl("http://placehold.it/50x50");
         user.setLangKey("fr");
         user.setAuthorities(authorities);
         when(mockUserService.getUserWithAuthorities()).thenReturn(user);

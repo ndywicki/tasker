@@ -14,7 +14,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.time.Instant;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -67,22 +66,22 @@ public class User implements Serializable {
     @Column(name = "lang_key", length = 5)
     private String langKey;
 
-    @Size(max = 256)
-    @Column(name = "image_url", length = 256)
-    private String imageUrl;
-
-    @Size(max = 20)
-    @Column(name = "activation_key", length = 20)
-    @JsonIgnore
-    private String activationKey;
-
-    @Size(max = 20)
-    @Column(name = "reset_key", length = 20)
-    @JsonIgnore
-    private String resetKey;
-
-    @Column(name = "reset_date")
-    private Instant resetDate = null;
+//    @Size(max = 256)
+//    @Column(name = "image_url", length = 256)
+//    private String imageUrl;
+//
+//    @Size(max = 20)
+//    @Column(name = "activation_key", length = 20)
+//    @JsonIgnore
+//    private String activationKey;
+//
+//    @Size(max = 20)
+//    @Column(name = "reset_key", length = 20)
+//    @JsonIgnore
+//    private String resetKey;
+//
+//    @Column(name = "reset_date")
+//    private Instant resetDate = null;
 
     @JsonIgnore
     @ManyToMany
@@ -119,10 +118,8 @@ public class User implements Serializable {
             ", firstName='" + firstName + '\'' +
             ", lastName='" + lastName + '\'' +
             ", email='" + email + '\'' +
-            ", imageUrl='" + imageUrl + '\'' +
             ", activated='" + activated + '\'' +
             ", langKey='" + langKey + '\'' +
-            ", activationKey='" + activationKey + '\'' +
             "}";
     }
 }

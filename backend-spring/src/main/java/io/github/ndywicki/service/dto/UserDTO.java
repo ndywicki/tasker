@@ -49,20 +49,19 @@ public class UserDTO {
 
     public UserDTO(User user) {
         this(user.getId(), user.getLogin(), user.getFirstName(), user.getLastName(),
-            user.getEmail(), user.getImageUrl(), user.getLangKey(),
+            user.getEmail(),  user.getLangKey(),
             user.getAuthorities().stream().map(Authority::getName)
                 .collect(Collectors.toSet()));
     }
 
     public UserDTO(Long id, String login, String firstName, String lastName,
-        String email, String imageUrl, String langKey, Set<String> authorities) {
+        String email, String langKey, Set<String> authorities) {
 
         this.id = id;
         this.login = login;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.imageUrl = imageUrl;
         this.langKey = langKey;
         this.authorities = authorities;
     }
