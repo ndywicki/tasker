@@ -3,7 +3,8 @@ import { RouterModule } from '@angular/router';
 
 import { TaskerSharedModule } from '../shared';
 
-import { HOME_ROUTE, HomeComponent } from './';
+import { HOME_ROUTE, HomeComponent, TaskService } from './';
+
 
 @NgModule({
     imports: [
@@ -16,6 +17,7 @@ import { HOME_ROUTE, HomeComponent } from './';
     entryComponents: [
     ],
     providers: [
+        TaskService
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

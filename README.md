@@ -19,12 +19,12 @@ Each backend expose a REST API for authentification and task operations.
 - [x] Backend Spring - Add MySQL support
 - [x] Backend Spring - Add liquibase (Oauth2 model, users and tasks)
 - [x] Backend Spring - Create account / authenticate REST endpoints
-- [ ] Backend Spring - Implement the task REST API
-- [ ] Backend Spring - Add TU
+- [x] Backend Spring - Implement the task REST API
+- [x] Backend Spring - Add TU
 - [ ] Backend Spring - Add Swagger documentation
 - [x] Front - Intialize procject (SPA Angular cli)
 - [x] Front - Implement login / logout page
-- [ ] Front - Implement the task page
+- [x] Front - Implement the task page
 - [x] Front - Add pretty style
 - [ ] Front - Add properties porject for the backend API URL (currently under src\app\shared\auth\auth-oauth2.service.ts)
 - [ ] Backend Node -  Initialize project
@@ -35,4 +35,6 @@ Each backend expose a REST API for authentification and task operations.
 
 ## Issues
 
-- [x] CORS issue between front and back (http port) 
+- [x] CORS issue between front and back (http port)
+- [ ] Bug first connection user principal not ready in Home ngOnInit (refresh needed).
+		Need to add an login successful event

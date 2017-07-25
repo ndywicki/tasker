@@ -2,8 +2,24 @@
     <div class="col-md-3">
         <span class="img-fluid img-rounded"></span>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9" [ngSwitch]="isAuthenticated()">
         <h1 class="display-4">Tasker</h1>
-        <p class="lead">Add an task</p>
+        <div *ngSwitchCase="true">
+            <input type="text" class="new-task" placeholder="Add task" autofocus="" [(ngModel)]="task.title" (keyup.enter)="addTask()">
+            <ul class="task-list">
+                <li *ngFor="let task of tasks">
+                    <div class="col-md-3">
+                        <input class="toggle" type="checkbox" (click)="toggleCompletion(task)" [checked]="task.completed">
+                        <label (dblclick)="editTask(task)" [ngClass]="isDoneClass(task)">{{task.title}}</label>
+                        <a class="hand pull-right" (click)="remove(task)"><i class="fa fa-trash-o" title="Remove task"></i></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div *ngSwitchCase="false">
+            <p>
+                Please login before managed your tasks.
+            </p>
+        </div>
     </div>
 </div>

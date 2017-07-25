@@ -66,23 +66,6 @@ public class User implements Serializable {
     @Column(name = "lang_key", length = 5)
     private String langKey;
 
-//    @Size(max = 256)
-//    @Column(name = "image_url", length = 256)
-//    private String imageUrl;
-//
-//    @Size(max = 20)
-//    @Column(name = "activation_key", length = 20)
-//    @JsonIgnore
-//    private String activationKey;
-//
-//    @Size(max = 20)
-//    @Column(name = "reset_key", length = 20)
-//    @JsonIgnore
-//    private String resetKey;
-//
-//    @Column(name = "reset_date")
-//    private Instant resetDate = null;
-
     @JsonIgnore
     @ManyToMany
     @JoinTable(

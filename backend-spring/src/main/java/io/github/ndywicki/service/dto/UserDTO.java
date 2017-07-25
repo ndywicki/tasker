@@ -33,9 +33,6 @@ public class UserDTO {
     @Size(min = 5, max = 100)
     private String email;
 
-    @Size(max = 256)
-    private String imageUrl;
-
     private boolean activated = false;
 
     @Size(min = 2, max = 5)
@@ -94,10 +91,6 @@ public class UserDTO {
         return email;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
     public boolean isActivated() {
         return activated;
     }
@@ -117,7 +110,6 @@ public class UserDTO {
             ", firstName='" + firstName + '\'' +
             ", lastName='" + lastName + '\'' +
             ", email='" + email + '\'' +
-            ", imageUrl='" + imageUrl + '\'' +
             ", activated=" + activated +
             ", langKey='" + langKey + '\'' +
             ", authorities=" + authorities +

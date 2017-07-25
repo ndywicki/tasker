@@ -4,6 +4,7 @@ export * from './auth/principal.service';
 export * from './login/login.component';
 export * from './login/login.service';
 export * from './login/login-modal.service';
+export * from './user/user.model';
 export * from './shared-libs.module';
 export * from './shared-common.module';
 export * from './shared.module';
