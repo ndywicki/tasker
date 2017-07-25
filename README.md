@@ -23,11 +23,16 @@ Each backend expose a REST API for authentification and task operations.
 - [ ] Backend Spring - Add TU
 - [ ] Backend Spring - Add Swagger documentation
 - [x] Front - Intialize procject (SPA Angular cli)
-- [ ] Front - Implement login / logout page
+- [x] Front - Implement login / logout page
 - [ ] Front - Implement the task page
-- [ ] Front - Add pretty style
+- [x] Front - Add pretty style
+- [ ] Front - Add properties porject for the backend API URL (currently under src\app\shared\auth\auth-oauth2.service.ts)
 - [ ] Backend Node -  Initialize project
 - [ ] Backend Node - Add MySQL Support
 - [ ] Backend Node - Add security server Oauth2 implementation
 - [ ] Backend Node - Implement the task REST API (Express module)
 - [ ] ALL - Dockerize stack
+
+## Issues
+
+- [ ] CORS issue between front and back (http port) 

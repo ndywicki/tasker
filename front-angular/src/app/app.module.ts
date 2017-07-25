@@ -1,20 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { Ng2Webstorage } from 'ng2-webstorage';
 
-import { AppComponent } from './app.component';
+import { TaskerHomeModule } from './home/home.module';
+import { TaskerSharedModule } from './shared';
+import { customHttpProvider } from './blocks/interceptor/http.provider';
+
+import {
+  AppMainComponent,
+  LayoutRoutingModule,
+  NavbarComponent
+} from './layouts';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule
+    LayoutRoutingModule,
+    Ng2Webstorage.forRoot({ prefix: 'app', separator: '-'}),
+    TaskerSharedModule,
+    TaskerHomeModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppMainComponent,
+    NavbarComponent
+  ],
+  providers: [
+    customHttpProvider()
+  ],
+  bootstrap: [AppMainComponent]
 })
 export class AppModule { }
