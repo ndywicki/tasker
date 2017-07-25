@@ -6,7 +6,10 @@ import { Principal, LoginModalService, LoginService } from '../../shared';
 
 @Component({
     selector: 'app-navbar',
-    templateUrl: './navbar.component.html'
+    templateUrl: './navbar.component.html',
+    styleUrls: [
+        'navbar.scss'
+    ]
 })
 export class NavbarComponent {
     isNavbarCollapsed: boolean;
