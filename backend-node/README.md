@@ -8,10 +8,16 @@ This application implement the Spring backend takers stack.
 
 Run the following command
 
-    npm start
+    npm start    
 
 ## Docker
 
 You can run Docker image of MySQL to have a production setup on your local dev
 
     docker-compose src/main/docker/mysql.yml up -d
+
+## API endpoints
+
+Get all tasks
+
+    curl http://localhost:8080/api/tasks
