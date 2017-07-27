@@ -75,6 +75,7 @@
                   file="config/liquibase/users.csv"
                   separator=";"
                   tableName="user">
+            <column name="activated" type="boolean"/>
         </loadData>
 
         <loadData encoding="UTF-8"
