@@ -143,3 +143,5 @@ task stage(dependsOn: 'bootRepackage') {
 // Lombok enable annotation processor
 // @see http://docs.spring.io/spring-boot/docs/1.5.4.RELEASE/reference/html/configuration-metadata.html#configuration-metadata-annotation-processor
 compileJava.dependsOn processResources
+processResources.dependsOn clean,bootBuildInfo
+bootBuildInfo.mustRunAfter clean
