@@ -1,7 +1,7 @@
 # Tasker
 This application implement the Spring backend takers stack.
 
-  - Will be include the user authentication with OAuth2 server
+  - Include the user authentication with OAuth2 server
   - And also an REST Api to managed the user tasks (CRUD)
 
 ## Running
