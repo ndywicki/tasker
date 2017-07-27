@@ -26,10 +26,11 @@ Each backend expose a REST API for authentification and task operations.
 - [x] Front - Implement login / logout page
 - [x] Front - Implement the task page
 - [x] Front - Add pretty style
+- [x] Front - Finish the task edit
 - [ ] Front - Add properties porject for the backend API URL (currently under src\app\shared\auth\auth-oauth2.service.ts)
-- [ ] Backend Node -  Initialize project
-- [ ] Backend Node - Add MySQL Support
-- [ ] Backend Node - Add security server Oauth2 implementation
+- [x] Backend Node -  Initialize project
+- [x] Backend Node - Add MySQL Support
+- [ ] Backend Node - Add security server Oauth2 implementation (used https://github.com/oauthjs/node-oauth2-server)
 - [ ] Backend Node - Implement the task REST API (Express module)
 - [ ] ALL - Dockerize stack
 
