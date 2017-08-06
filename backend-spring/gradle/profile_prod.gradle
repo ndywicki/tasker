@@ -1,0 +1,38 @@
+apply plugin: 'org.springframework.boot'
+
+ext {
+    logbackLoglevel = "INFO"
+}
+
+dependencies {
+
+}
+
+def profiles = 'prod'
+if (project.hasProperty('no-liquibase')) {
+    profiles += ',no-liquibase'
+}
+
+bootRun {
+    args = []
+}
+
+war {
+    webAppDirName = 'build/www/'
+}
+
+processResources {
+    filesMatching('**/logback-spring.xml') {
+        filter {
+            it.replace('#logback.loglevel#', logbackLoglevel)
+        }
+    }
+    filesMatching('**/application.yml') {
+        filter {
+            it.replace('#spring.profiles.active#', profiles)
+        }
+        filter {
+            it.replace('#project.version#', version)
+        }
+    }
+}
